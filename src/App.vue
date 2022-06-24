@@ -117,40 +117,7 @@
 				>
 			</div>
 			<div class="border-t border-gray-200 pt-4 pb-3">
-				<div class="px-4 flex items-center">
-					<div class="flex-shrink-0">
-						<img
-							class="h-10 w-10 rounded-full"
-							:src="user.imageUrl"
-							alt=""
-						/>
-					</div>
-					<div class="ml-3">
-						<div class="text-base font-medium text-gray-800">
-							{{ user.name }}
-						</div>
-						<div class="text-sm font-medium text-gray-500">
-							{{ user.email }}
-						</div>
-					</div>
-					<button
-						type="button"
-						class="ml-auto flex-shrink-0 bg-white rounded-full p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-					>
-						<span class="sr-only">View notifications</span>
-						<BellIcon class="h-6 w-6" aria-hidden="true" />
-					</button>
-				</div>
-				<div class="mt-3 px-2 space-y-1">
-					<DisclosureButton
-						v-for="item in userNavigation"
-						:key="item.name"
-						as="a"
-						:href="item.href"
-						class="block rounded-md py-2 px-3 text-base font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900"
-						>{{ item.name }}</DisclosureButton
-					>
-				</div>
+				<LanguageSelectorMobile />
 			</div>
 		</DisclosurePanel>
 	</Disclosure>
@@ -169,6 +136,7 @@
 	import { SearchIcon } from '@heroicons/vue/solid';
 	import { BellIcon, MenuIcon, XIcon } from '@heroicons/vue/outline';
 	import LanguageSelector from './components/LanguageSelector.vue';
+	import LanguageSelectorMobile from './components/LanguageSelectorMobile.vue';
 
 	const user = {
 		name: 'Tom Cook',
