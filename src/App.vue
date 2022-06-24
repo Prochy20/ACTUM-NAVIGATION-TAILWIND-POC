@@ -82,6 +82,7 @@
 				class="hidden lg:py-2 lg:flex lg:space-x-8"
 				aria-label="Global"
 			>
+				<FlyoutMenu />
 				<a
 					v-for="item in navigation"
 					:key="item.name"
@@ -101,20 +102,7 @@
 
 		<DisclosurePanel as="nav" class="lg:hidden" aria-label="Global">
 			<div class="pt-2 pb-3 px-2 space-y-1">
-				<DisclosureButton
-					v-for="item in navigation"
-					:key="item.name"
-					as="a"
-					:href="item.href"
-					:class="[
-						item.current
-							? 'bg-gray-100 text-gray-900'
-							: 'text-gray-900 hover:bg-gray-50 hover:text-gray-900',
-						'block rounded-md py-2 px-3 text-base font-medium',
-					]"
-					:aria-current="item.current ? 'page' : undefined"
-					>{{ item.name }}</DisclosureButton
-				>
+				<FlyoutMenuMobile />
 			</div>
 			<div class="border-t border-gray-200 pt-4 pb-3">
 				<!-- Language selector mobile -->
@@ -138,9 +126,11 @@
 	import { BellIcon, MenuIcon, XIcon } from '@heroicons/vue/outline';
 	import LanguageSelector from './components/LanguageSelector.vue';
 	import LanguageSelectorMobile from './components/LanguageSelectorMobile.vue';
+	import FlyoutMenu from './components/FlyoutMenu.vue';
+	import FlyoutMenuMobile from './components/FlyoutMenuMobile.vue';
 
 	const navigation = [
-		{ name: 'Dashboard', href: '#', current: true },
+		{ name: 'Dashboard', href: '#', current: false },
 		{ name: 'Team', href: '#', current: false },
 		{ name: 'Projects', href: '#', current: false },
 		{ name: 'Calendar', href: '#', current: false },
