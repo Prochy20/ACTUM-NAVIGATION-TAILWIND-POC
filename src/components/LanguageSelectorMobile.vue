@@ -3,7 +3,7 @@
 	<Listbox as="div" v-model="selected">
 		<ListboxLabel class="sr-only"> Change language </ListboxLabel>
 		<div class="relative">
-			<div class="flex shadow-sm rounded-md divide-x justify-center">
+			<div class="flex rounded-md divide-x justify-center">
 				<ListboxOption
 					as="template"
 					v-for="option in publishingOptions"

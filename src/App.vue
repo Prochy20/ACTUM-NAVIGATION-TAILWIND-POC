@@ -78,35 +78,65 @@
 					<LanguageSelector />
 				</div>
 			</div>
-			<nav
-				class="hidden lg:py-2 lg:flex lg:space-x-8"
-				aria-label="Global"
-			>
-				<FlyoutMenu />
-				<a
-					v-for="item in navigation"
-					:key="item.name"
-					:href="item.href"
-					:class="[
-						item.current
-							? 'bg-gray-100 text-gray-900'
-							: 'text-gray-900 hover:bg-gray-50 hover:text-gray-900',
-						'rounded-md py-2 px-3 inline-flex items-center text-sm font-medium',
-					]"
-					:aria-current="item.current ? 'page' : undefined"
+			<div class="flex justify-between">
+				<nav
+					class="hidden lg:py-2 lg:flex lg:space-x-8"
+					aria-label="Global"
 				>
-					{{ item.name }}
-				</a>
-			</nav>
+					<FlyoutMenu />
+					<a
+						v-for="item in navigation"
+						:key="item.name"
+						:href="item.href"
+						:class="[
+							item.current
+								? 'bg-gray-100 text-gray-900'
+								: 'text-gray-900 hover:bg-gray-50 hover:text-gray-900',
+							'rounded-md py-2 px-3 inline-flex items-center text-sm font-medium',
+						]"
+						:aria-current="item.current ? 'page' : undefined"
+					>
+						{{ item.name }}
+					</a>
+				</nav>
+				<div class="hidden lg:py-2 lg:flex lg:space-x-6">
+					<button
+						type="button"
+						class="inline-flex items-center px-3 py-2 border border-transparent shadow-sm text-sm leading-4 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+					>
+						Do action
+					</button>
+					<button
+						type="button"
+						class="inline-flex items-center px-3 py-2 shadow-sm text-sm leading-4 font-medium rounded-md text-indigo-600 bg-white border-indigo-600 border-2 hover:bg-indigo-100 hover:border-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+					>
+						See more
+					</button>
+				</div>
+			</div>
 		</div>
 
 		<DisclosurePanel as="nav" class="lg:hidden" aria-label="Global">
 			<div class="pt-2 pb-3 px-2 space-y-1">
 				<FlyoutMenuMobile />
 			</div>
-			<div class="border-t border-gray-200 pt-4 pb-3">
+			<div class="border-y border-gray-200 pt-4 pb-3">
 				<!-- Language selector mobile -->
 				<LanguageSelectorMobile />
+			</div>
+			<div class="pt-4 pb-3 px-2 flex gap-x-5">
+				<button
+					type="button"
+					class="inline-flex items-center px-3 py-2 border-transparent shadow-sm text-sm leading-4 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+				>
+					Do action
+				</button>
+				<button
+					type="button"
+					class="inline-flex items-center px-3 py-2 shadow-sm text-sm leading-4 font-medium rounded-md text-indigo-600 bg-white border-indigo-600 border-2 hover:bg-indigo-100 hover:border-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+				>
+					See more
+				</button>
 			</div>
 		</DisclosurePanel>
 	</Disclosure>
